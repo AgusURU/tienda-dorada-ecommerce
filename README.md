@@ -1,7 +1,7 @@
 # Proyecto Final: Simulador Interactivo de Ecommerce
 ## Autor: Agustín Rodriguez
 
-### 📋 Descripción del Proyecto
+###  Descripción del Proyecto
 
 Este es un simulador interactivo de Ecommerce desarrollado en JavaScript que permite a los usuarios:
 - Navegar por un catálogo de productos
@@ -10,16 +10,16 @@ Este es un simulador interactivo de Ecommerce desarrollado en JavaScript que per
 - Realizar el proceso completo de checkout
 - Persistir el carrito en localStorage
 
-### 🎯 Objetivos Cumplidos
+###  Objetivos Cumplidos
 
-✅ **Simulador Interactivo**: Ecommerce funcional con proceso completo de compra
-✅ **Datos Remotos**: Productos cargados desde archivo JSON de forma asíncrona
-✅ **HTML Interactivo**: Todo el contenido generado dinámicamente desde JavaScript
-✅ **Herramientas JS**: Uso de ES6 modules, async/await, fetch API, DOM manipulation
-✅ **Librerías Externas**: SweetAlert2 para reemplazar alert/prompt/confirm
-✅ **Lógica de Negocio**: Proceso completo desde catálogo hasta compra
+ **Simulador Interactivo**: Ecommerce funcional con proceso completo de compra
+ **Datos Remotos**: Productos cargados desde archivo JSON de forma asíncrona
+ **HTML Interactivo**: Todo el contenido generado dinámicamente desde JavaScript
+ **Herramientas JS**: Uso de ES6 modules, async/await, fetch API, DOM manipulation
+ **Librerías Externas**: SweetAlert2 para reemplazar alert/prompt/confirm
+ **Lógica de Negocio**: Proceso completo desde catálogo hasta compra
 
-### 🛠️ Tecnologías Utilizadas
+###  Tecnologías Utilizadas
 
 - **HTML5**: Estructura semántica
 - **CSS3**: Estilos responsive con CSS Grid y Flexbox
@@ -27,7 +27,7 @@ Este es un simulador interactivo de Ecommerce desarrollado en JavaScript que per
 - **SweetAlert2**: Librería para notificaciones y alertas
 - **LocalStorage**: Persistencia de datos del carrito
 
-### 📁 Estructura del Proyecto
+###  Estructura del Proyecto
 
 ```
 ProyectoFinal-Rodriguez/
@@ -48,7 +48,7 @@ ProyectoFinal-Rodriguez/
     └── styles.css          # Estilos CSS
 ```
 
-### 🚀 Funcionalidades Principales
+###  Funcionalidades Principales
 
 1. **Catálogo de Productos**
    - Carga asíncrona desde JSON
@@ -73,55 +73,36 @@ ProyectoFinal-Rodriguez/
    - Notificaciones con SweetAlert2
    - Actualizaciones asíncronas del DOM
 
-### 💻 Cómo Ejecutar el Proyecto
+###  Criterios de Evaluación Cumplidos
 
-1. **Opción 1 - Servidor incluido:**
-   ```bash
-   cd ProyectoFinal-Rodriguez
-   node server.js
-   ```
-   Luego abrir http://localhost:3000
-
-2. **Opción 2 - Servidor HTTP simple:**
-   ```bash
-   cd ProyectoFinal-Rodriguez
-   npx http-server -p 3000
-   ```
-
-3. **Opción 3 - Live Server (VS Code):**
-   - Instalar extensión Live Server
-   - Click derecho en index.html → "Open with Live Server"
-
-### 📊 Criterios de Evaluación Cumplidos
-
-#### ✅ Funcionalidad
+####  Funcionalidad
 - Simula el flujo completo entrada-procesamiento-salida
 - Sin errores de cómputo
 - Validaciones de stock y datos
 
-#### ✅ Interactividad
+####  Interactividad
 - Captura de eventos con inputs adecuados
 - Salidas coherentes con los datos ingresados
 - Visualización asíncrona en HTML
 
-#### ✅ Escalabilidad
+####  Escalabilidad
 - Funciones parametrizadas con tareas específicas
 - Objetos con propiedades y métodos relevantes
 - Arrays para agrupar datos dinámicamente
 - Recorrido óptimo de colecciones
 
-#### ✅ Integridad
+####  Integridad
 - Código JavaScript en archivos .js separados
 - Referenciado correctamente desde HTML
 - Información JSON cargada de forma asíncrona
 
-#### ✅ Legibilidad
+####  Legibilidad
 - Variables, funciones y objetos con nombres significativos
 - Código legible y bien estructurado
 - Comentarios JSDoc oportunos
 - Código ordenado y secuencial
 
-### 🎨 Características Técnicas
+###  Características Técnicas
 
 - **Modular**: Código organizado en módulos ES6
 - **Asíncrono**: Carga de datos con fetch API
@@ -129,10 +110,10 @@ ProyectoFinal-Rodriguez/
 - **Accesible**: Elementos semántticos y atributos ARIA
 - **Performante**: Event delegation y optimizaciones DOM
 
-### 👤 Autor
+###  Autor
 
 **Agustín Rodriguez**  
 Curso: JavaScript - CoderHouse  
-Proyecto Final - 2024
+Proyecto Final - 2025
 
 **Nombre del repositorio/zip**: `ProyectoFinal+Rodriguez`
