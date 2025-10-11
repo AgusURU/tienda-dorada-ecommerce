@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ProyectoFinal+Rodriguez - Ecommerce</title>
+  <link rel="stylesheet" href="styles/styles.css" />
+  <!-- SweetAlert2 -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+<body>
+  <header class="site-header">
+    <h1>🛍️ Tienda Dorada - Ecommerce Premium</h1>
+    <button id="open-cart" class="btn primary">🛒 Carrito (<span id="cart-count">0</span>)</button>
+  </header>
+
+  <main>
+    <section id="product-list" class="product-list"></section>
+
+    <aside id="cart-panel" class="cart-panel hidden">
+      <h2>Carrito</h2>
+      <div id="cart-items"></div>
+      <div class="cart-footer">
+        <div>Total: $<span id="cart-total">0.00</span></div>
+        <button id="checkout-btn" class="btn primary">Checkout</button>
+        <button id="close-cart" class="btn">Cerrar</button>
+      </div>
+    </aside>
+
+    <!-- Modal checkout simple -->
+    <div id="checkout-modal" class="modal hidden">
+      <div class="modal-content">
+        <h3>Checkout</h3>
+        <form id="checkout-form">
+          <label>Nombre <input type="text" id="customer-name" required /></label>
+          <label>Email <input type="email" id="customer-email" required /></label>
+          <label>Dirección <input type="text" id="customer-address" required /></label>
+          <button type="submit" class="btn primary">Confirmar compra</button>
+          <button type="button" id="cancel-checkout" class="btn">Cancelar</button>
+        </form>
+      </div>
+    </div>
+
+  </main>
+
+  <script type="module" src="src/app.js"></script>
+</body>
+</html>
