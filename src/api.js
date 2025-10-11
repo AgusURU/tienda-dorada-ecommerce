@@ -1,22 +1,31 @@
 /**
  * API simulada para manejo de productos
- * Utiliza datos estáticos en formato JSON cargados de forma asíncrona
+ * Utiliza datos estáticos con método de respaldo para GitHub Pages
  */
+
+import { PRODUCTS_DATA } from './productsData.js';
 
 /**
  * Obtiene todos los productos disponibles
+ * Intenta cargar desde JSON, si falla usa datos embebidos
  * @returns {Promise<Array>} Array de objetos producto
  */
 export async function getProducts() {
   // Simula latencia de red para demostrar carga asíncrona
   await new Promise(resolve => setTimeout(resolve, 300));
   
-  const response = await fetch('./data/products.json');
-  if (!response.ok) {
-    throw new Error('No se pudieron cargar los productos');
+  try {
+    // Intenta cargar desde JSON primero
+    const response = await fetch('data/products.json');
+    if (response.ok) {
+      return await response.json();
+    }
+  } catch (error) {
+    console.warn('Fallback: Cargando productos desde módulo embebido');
   }
   
-  return response.json();
+  // Fallback: usar datos embebidos si falla el JSON
+  return PRODUCTS_DATA;
 }
 
 /**
