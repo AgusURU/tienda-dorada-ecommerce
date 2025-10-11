@@ -1,17 +1,13 @@
-// Proyecto Final - Simulador Interactivo de Ecommerce
-// Autor: Agustín Rodriguez
-// Curso: JavaScript - CoderHouse
+// PROYECTO FINAL - Agustín Rodriguez - JavaScript CoderHouse
 
 import { getProducts } from './api.js';
 import { createProductCard } from './components/productCard.js';
 import { renderCart } from './components/cart.js';
 
-// Variables globales para manejar el estado de la aplicación
 let PRODUCTS = [];
 let PRODUCTS_MAP = {};
 let CART = JSON.parse(localStorage.getItem('pj_cart') || '[]');
 
-// Referencias a elementos del DOM
 const productList = document.getElementById('product-list');
 const cartCount = document.getElementById('cart-count');
 const openCartBtn = document.getElementById('open-cart');
@@ -23,10 +19,7 @@ const checkoutModal = document.getElementById('checkout-modal');
 const cancelCheckout = document.getElementById('cancel-checkout');
 const checkoutForm = document.getElementById('checkout-form');
 
-/**
- * Función de inicialización de la aplicación
- * Carga los productos de forma asíncrona y configura la interfaz
- */
+// INICIALIZACIÓN - Carga productos desde JSON de forma asíncrona
 async function init() {
   try {
     // Asegurar que el modal esté oculto al inicializar
@@ -41,9 +34,7 @@ async function init() {
   }
 }
 
-/**
- * Renderiza dinámicamente la lista de productos en el DOM
- */
+// RENDERIZADO DINÁMICO DE PRODUCTOS
 function renderProducts() {
   productList.innerHTML = '';
   PRODUCTS.forEach(product => {
@@ -52,7 +43,7 @@ function renderProducts() {
   });
 }
 
-// Event delegation para agregar productos al carrito
+// EVENT DELEGATION - Manejo de eventos del catálogo
 productList.addEventListener('click', event => {
   if (event.target.matches('.add-btn')) {
     const productId = Number(event.target.dataset.id);
@@ -63,11 +54,7 @@ productList.addEventListener('click', event => {
 openCartBtn.addEventListener('click', ()=> cartPanel.classList.toggle('hidden'));
 closeCartBtn.addEventListener('click', ()=> cartPanel.classList.add('hidden'));
 
-/**
- * Agrega un producto al carrito con validación de stock
- * @param {number} id - ID del producto
- * @param {number} qty - Cantidad a agregar
- */
+// LÓGICA DEL CARRITO - Agregar producto con validación de stock
 function addToCart(id, qty) {
   const product = PRODUCTS_MAP[id];
   if (!product) return;
@@ -75,13 +62,11 @@ function addToCart(id, qty) {
   const existingItem = CART.find(item => item.id === id);
   const newQuantity = (existingItem ? existingItem.qty : 0) + qty;
   
-  // Validación de stock
   if (newQuantity > product.stock) {
     Swal.fire('Stock insuficiente', 'No hay suficiente stock para esa cantidad', 'warning');
     return;
   }
   
-  // Actualizar o agregar item al carrito
   if (existingItem) {
     existingItem.qty = newQuantity;
   } else {
@@ -99,7 +84,7 @@ function addToCart(id, qty) {
   });
 }
 
-// Cart panel events (update qty, remove)
+// EVENTOS DEL CARRITO - Modificar cantidades y eliminar productos
 document.getElementById('cart-items').addEventListener('input', e=>{
   if(e.target.matches('.qty')){
     const id = Number(e.target.dataset.id);
@@ -132,6 +117,7 @@ function removeFromCart(id){
   updateCartUI();
 }
 
+// PERSISTENCIA - LocalStorage para mantener el carrito
 function persistCart(){
   localStorage.setItem('pj_cart', JSON.stringify(CART));
 }
@@ -167,6 +153,7 @@ checkoutBtn.addEventListener('click', () => {
 
 cancelCheckout.addEventListener('click', ()=> checkoutModal.classList.add('hidden'));
 
+// PROCESO DE CHECKOUT - Simulación completa de compra
 checkoutForm.addEventListener('submit', e=>{
   e.preventDefault();
   const name = document.getElementById('customer-name').value;
@@ -175,12 +162,10 @@ checkoutForm.addEventListener('submit', e=>{
   const total = calculateTotal();
   if(CART.length===0){ Swal.fire('Carrito vacío','Agrega productos antes de pagar','info'); return; }
 
-  // Simula procesamiento
   Swal.fire({title:'Procesando pago...',didOpen:()=>{Swal.showLoading();}});
   setTimeout(()=>{
     Swal.close();
     Swal.fire('Compra confirmada',`Gracias ${name}. Total: $${total.toFixed(2)}`,'success');
-    // Limpia carrito
     CART = [];
     persistCart();
     updateCartUI();
@@ -188,5 +173,4 @@ checkoutForm.addEventListener('submit', e=>{
   },800);
 });
 
-// Inicializar
 init();

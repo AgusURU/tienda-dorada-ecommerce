@@ -1,4 +1,25 @@
-# Proyecto Final: Simulador Interactivo de Ecommerce
+# Proyecto Final: Simulador I### 📁 Estructura del Proyecto
+
+```
+ProyectoFinal-Rodriguez/
+├── index.html              # Página principal
+├── products.json           # Datos de productos (JSON) - Compatible GitHub Pages
+├── README.md               # Documentación del proyecto
+├── server.js               # Servidor HTTP para desarrollo local
+├── .gitignore              # Archivos excluidos de Git
+├── assets/
+│   └── taza.png           # Imagen de ejemplo
+├── data/
+│   └── products.json      # Copia original de datos JSON
+├── src/
+│   ├── app.js             # Lógica principal de la aplicación
+│   ├── api.js             # Simulación de API con fetch JSON
+│   └── components/
+│       ├── cart.js        # Renderizado del carrito
+│       └── productCard.js # Generación de tarjetas de productos
+└── styles/
+    └── styles.css         # Estilos CSS (verde y dorado)
+```rce
 ## Autor: Agustín Rodriguez
 
 ###  Descripción del Proyecto

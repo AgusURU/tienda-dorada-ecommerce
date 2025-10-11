@@ -4,11 +4,7 @@
  * @param {Object} product - Objeto producto con propiedades id, name, description, price, stock, img
  * @returns {HTMLElement} Elemento DOM de la tarjeta del producto
  */
-/**
- * Crea una tarjeta de producto con estilos mejorados
- * @param {Object} product - Objeto producto con propiedades: id, name, description, price, stock, img
- * @returns {HTMLElement} Elemento div con la tarjeta del producto
- */
+// COMPONENTE - Generación dinámica de tarjetas de producto
 export function createProductCard(product){
   const div = document.createElement('div');
   div.className = 'card';
