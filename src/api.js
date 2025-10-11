@@ -11,7 +11,7 @@ export async function getProducts() {
   // Simula latencia de red para demostrar carga asíncrona
   await new Promise(resolve => setTimeout(resolve, 300));
   
-  const response = await fetch('/data/products.json');
+  const response = await fetch('./data/products.json');
   if (!response.ok) {
     throw new Error('No se pudieron cargar los productos');
   }

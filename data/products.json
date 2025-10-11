@@ -6,7 +6,7 @@
     "stock": 12,
     "category": "Accesorios",
     "description": "Taza cerámica 325ml, diseño personalizado.",
-    "img": "../assets/taza.png"
+    "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=400&fit=crop"
   },
   {
     "id": 2,
