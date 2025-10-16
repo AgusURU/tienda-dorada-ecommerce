@@ -3,19 +3,100 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ProyectoFinal+Rodriguez - Ecommerce</title>
+  <title>Tienda Dorada - Ecommerce Premium | Agustín Rodriguez</title>
+  <meta name="description" content="Tienda online premium con productos exclusivos. Desarrollado por Agustín Rodriguez - Especialista en desarrollo web.">
   <link rel="stylesheet" href="styles/styles.css" />
   <!-- SweetAlert2 -->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
   <header class="site-header">
-    <h1>🛍️ Tienda Dorada - Ecommerce Premium</h1>
-    <button id="open-cart" class="btn primary">🛒 Carrito (<span id="cart-count">0</span>)</button>
+    <div class="header-content">
+      <div class="logo-section">
+        <h1><i class="fas fa-crown"></i> Tienda Dorada</h1>
+        <p class="tagline">Ecommerce Premium</p>
+      </div>
+      <nav class="header-nav">
+        <a href="#inicio" class="nav-link"><i class="fas fa-home"></i> Inicio</a>
+        <a href="#productos" class="nav-link"><i class="fas fa-shopping-bag"></i> Productos</a>
+        <a href="#sobre-nosotros" class="nav-link"><i class="fas fa-info-circle"></i> Nosotros</a>
+        <a href="#contacto" class="nav-link"><i class="fas fa-envelope"></i> Contacto</a>
+      </nav>
+      <button id="open-cart" class="btn primary cart-btn">
+        <i class="fas fa-shopping-cart"></i> 
+        Carrito (<span id="cart-count">0</span>)
+      </button>
+    </div>
   </header>
 
+  <!-- Hero Section -->
+  <section id="inicio" class="hero-section">
+    <div class="hero-content">
+      <h2>Bienvenido a la Experiencia Premium</h2>
+      <p>Descubre productos únicos y exclusivos con la mejor calidad del mercado</p>
+      <button class="btn hero-btn" onclick="document.getElementById('productos').scrollIntoView()">
+        <i class="fas fa-arrow-down"></i> Ver Productos
+      </button>
+    </div>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="stats-section">
+    <div class="stats-container">
+      <div class="stat-item">
+        <i class="fas fa-users"></i>
+        <h3>1000+</h3>
+        <p>Clientes Satisfechos</p>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-box"></i>
+        <h3>500+</h3>
+        <p>Productos Vendidos</p>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-star"></i>
+        <h3>4.9/5</h3>
+        <p>Valoración Promedio</p>
+      </div>
+      <div class="stat-item">
+        <i class="fas fa-shipping-fast"></i>
+        <h3>24h</h3>
+        <p>Entrega Rápida</p>
+      </div>
+    </div>
+  </section>
+
   <main>
-    <section id="product-list" class="product-list"></section>
+    <!-- Products Section -->
+    <section id="productos" class="products-section">
+      <div class="section-header">
+        <h2><i class="fas fa-shopping-bag"></i> Nuestros Productos</h2>
+        <p>Selección premium de productos exclusivos</p>
+      </div>
+      
+      <!-- Filter Buttons -->
+      <div class="filter-buttons">
+        <button class="filter-btn active" data-filter="all">
+          <i class="fas fa-th"></i> Todos
+        </button>
+        <button class="filter-btn" data-filter="Accesorios">
+          <i class="fas fa-gem"></i> Accesorios
+        </button>
+        <button class="filter-btn" data-filter="Indumentaria">
+          <i class="fas fa-tshirt"></i> Indumentaria
+        </button>
+        <button class="filter-btn" data-filter="Electrónicos">
+          <i class="fas fa-laptop"></i> Electrónicos
+        </button>
+        <button class="filter-btn" data-filter="Oficina">
+          <i class="fas fa-briefcase"></i> Oficina
+        </button>
+      </div>
+      
+      <div id="product-list" class="product-list"></div>
+    </section>
 
     <aside id="cart-panel" class="cart-panel hidden">
       <h2>Carrito</h2>
@@ -41,7 +122,107 @@
       </div>
     </div>
 
+    <!-- About Section -->
+    <section id="sobre-nosotros" class="about-section">
+      <div class="about-content">
+        <div class="about-text">
+          <h2><i class="fas fa-info-circle"></i> Sobre Nosotros</h2>
+          <p>Somos una tienda premium especializada en productos de alta calidad. Nuestro compromiso es ofrecer la mejor experiencia de compra online con productos únicos y exclusivos.</p>
+          <div class="features">
+            <div class="feature">
+              <i class="fas fa-shield-alt"></i>
+              <h4>Calidad Garantizada</h4>
+              <p>Productos verificados y de la más alta calidad</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-shipping-fast"></i>
+              <h4>Envío Rápido</h4>
+              <p>Entrega en 24-48 horas a todo el país</p>
+            </div>
+            <div class="feature">
+              <i class="fas fa-headset"></i>
+              <h4>Soporte 24/7</h4>
+              <p>Atención al cliente siempre disponible</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section">
+      <div class="section-header">
+        <h2><i class="fas fa-quote-left"></i> Lo que dicen nuestros clientes</h2>
+      </div>
+      <div class="testimonials-grid">
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Excelente calidad de productos y envío muy rápido. Totalmente recomendado."</p>
+          <div class="author">- María González</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"La mejor tienda online que he encontrado. Productos únicos y atención excepcional."</p>
+          <div class="author">- Carlos Rodríguez</div>
+        </div>
+        <div class="testimonial">
+          <div class="stars">★★★★★</div>
+          <p>"Compra fácil, segura y productos de excelente calidad. Muy satisfecha."</p>
+          <div class="author">- Ana López</div>
+        </div>
+      </div>
+    </section>
+
   </main>
+
+  <!-- Footer -->
+  <footer id="contacto" class="site-footer">
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3><i class="fas fa-crown"></i> Tienda Dorada</h3>
+        <p>Tu destino para productos premium y experiencias de compra excepcionales.</p>
+        <div class="social-links">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Información</h4>
+        <ul>
+          <li><a href="#"><i class="fas fa-info-circle"></i> Sobre Nosotros</a></li>
+          <li><a href="#"><i class="fas fa-shipping-fast"></i> Envíos</a></li>
+          <li><a href="#"><i class="fas fa-undo"></i> Devoluciones</a></li>
+          <li><a href="#"><i class="fas fa-question-circle"></i> FAQ</a></li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Contacto</h4>
+        <ul>
+          <li><i class="fas fa-envelope"></i> info@tiendadorada.com</li>
+          <li><i class="fas fa-phone"></i> +598 123 456 789</li>
+          <li><i class="fas fa-map-marker-alt"></i> Montevideo, Uruguay</li>
+        </ul>
+      </div>
+      
+      <div class="footer-section">
+        <h4>Newsletter</h4>
+        <p>Suscríbete para recibir ofertas exclusivas</p>
+        <div class="newsletter">
+          <input type="email" placeholder="Tu email" class="newsletter-input">
+          <button class="btn newsletter-btn"><i class="fas fa-paper-plane"></i></button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer-bottom">
+      <p>&copy; 2024 Tienda Dorada - Desarrollado por <strong>Agustín Rodriguez</strong> | Especialista en Desarrollo Web</p>
+      <p><i class="fas fa-code"></i> JavaScript | React | Node.js | eCommerce Solutions</p>
+    </div>
+  </footer>
 
   <script type="module" src="src/app.js"></script>
 </body>

@@ -19,6 +19,8 @@ const checkoutModal = document.getElementById('checkout-modal');
 const cancelCheckout = document.getElementById('cancel-checkout');
 const checkoutForm = document.getElementById('checkout-form');
 
+let currentFilter = 'all';
+
 // INICIALIZACIÓN - Carga productos desde JSON de forma asíncrona
 async function init() {
   try {
@@ -29,6 +31,8 @@ async function init() {
     PRODUCTS.forEach(product => PRODUCTS_MAP[product.id] = product);
     renderProducts();
     updateCartUI();
+    setupFilterButtons();
+    setupSmoothScrolling();
   } catch (error) {
     Swal.fire('Error', 'No se pudieron cargar los productos. Verifica tu conexión e intenta nuevamente.', 'error');
   }
@@ -37,7 +41,17 @@ async function init() {
 // RENDERIZADO DINÁMICO DE PRODUCTOS
 function renderProducts() {
   productList.innerHTML = '';
-  PRODUCTS.forEach(product => {
+  
+  const filteredProducts = currentFilter === 'all' 
+    ? PRODUCTS 
+    : PRODUCTS.filter(product => product.category === currentFilter);
+  
+  if (filteredProducts.length === 0) {
+    productList.innerHTML = '<div class="no-products">No hay productos en esta categoría</div>';
+    return;
+  }
+  
+  filteredProducts.forEach(product => {
     const card = createProductCard(product);
     productList.appendChild(card);
   });
@@ -171,6 +185,75 @@ checkoutForm.addEventListener('submit', e=>{
     updateCartUI();
     checkoutModal.classList.add('hidden');
   },800);
+});
+
+// FILTROS DE PRODUCTOS
+function setupFilterButtons() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  
+  filterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      currentFilter = btn.dataset.filter;
+      renderProducts();
+      
+      // Animación suave
+      productList.style.opacity = '0';
+      setTimeout(() => {
+        productList.style.opacity = '1';
+      }, 100);
+    });
+  });
+}
+
+// NAVEGACIÓN SUAVE
+function setupSmoothScrolling() {
+  const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+  
+  navLinks.forEach(link => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = link.getAttribute('href');
+      const targetElement = document.querySelector(targetId);
+      
+      if (targetElement) {
+        targetElement.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+}
+
+// NEWSLETTER
+document.addEventListener('DOMContentLoaded', () => {
+  const newsletterBtn = document.querySelector('.newsletter-btn');
+  const newsletterInput = document.querySelector('.newsletter-input');
+  
+  if (newsletterBtn && newsletterInput) {
+    newsletterBtn.addEventListener('click', () => {
+      const email = newsletterInput.value.trim();
+      if (email && email.includes('@')) {
+        Swal.fire({
+          icon: 'success',
+          title: '¡Suscripción exitosa!',
+          text: `Gracias por suscribirte con ${email}`,
+          confirmButtonColor: '#2d8f2d'
+        });
+        newsletterInput.value = '';
+      } else {
+        Swal.fire({
+          icon: 'error',
+          title: 'Email inválido',
+          text: 'Por favor ingresa un email válido',
+          confirmButtonColor: '#2d8f2d'
+        });
+      }
+    });
+  }
 });
 
 init();

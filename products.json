@@ -1,56 +1,110 @@
 [
   {
     "id": 1,
-    "name": "Taza Personalizada",
+    "name": "Taza Personalizada Premium",
     "price": 450,
     "stock": 12,
     "category": "Accesorios",
-    "description": "Taza cerámica 325ml, diseño personalizado.",
+    "description": "Taza cerámica 325ml con diseño personalizado y acabado mate premium.",
     "img": "https://images.unsplash.com/photo-1544787219-7f47ccb76574?w=400&h=400&fit=crop"
   },
   {
     "id": 2,
-    "name": "Remera Básica",
+    "name": "Remera Orgánica Básica",
     "price": 1200,
     "stock": 6,
     "category": "Indumentaria",
-    "description": "Remera algodón 100% disponible en varias tallas.",
-    "img": "https://f.fcdn.app/imgs/c83f18/aventureros.com.uy/avenuy/0cbe/original/catalogo/RE002_Beige_1/1920-1200/remera-de-algodon-beige.jpg"
+    "description": "Remera algodón 100% orgánico, disponible en varias tallas y colores.",
+    "img": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=400&fit=crop"
   },
   {
     "id": 3,
-    "name": "Sticker Pack x10",
+    "name": "Sticker Pack Exclusivo",
     "price": 300,
     "stock": 30,
     "category": "Accesorios",
-    "description": "Pack de 10 stickers resistentes al agua.",
-    "img": "https://axiomprint.com/_next/image?url=https%3A%2F%2Fnewapi.axiomprint.com%2Fuploads%2Fcustom-stocker-pack-2-754.jpg&w=3840&q=100"
+    "description": "Pack de 10 stickers resistentes al agua con diseños únicos y limitados.",
+    "img": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=400&fit=crop"
   },
   {
     "id": 4,
-    "name": "Auriculares Premium",
+    "name": "Auriculares Premium Pro",
     "price": 2500,
     "stock": 8,
     "category": "Electrónicos",
-    "description": "Auriculares inalámbricos con cancelación de ruido.",
-    "img": "https://f.fcdn.app/imgs/05e063/www.zonatecno.com.uy/zoteuy/6df1/original/catalogo/106807_106807_3/1500-1500/auriculares-inalambricos-opn-sound-aperto-audio-direccional-auriculares-inalambricos-opn-sound-aperto-audio-direccional.jpg"
+    "description": "Auriculares inalámbricos con cancelación de ruido activa y 30h de batería.",
+    "img": "https://images.unsplash.com/photo-1484704849700-f032a568e944?w=400&h=400&fit=crop"
   },
   {
     "id": 5,
-    "name": "Notebook Ejecutiva",
+    "name": "Notebook Ejecutiva Premium",
     "price": 850,
     "stock": 15,
     "category": "Oficina",
-    "description": "Cuaderno de notas con tapa dura y papel de calidad.",
-    "img": "https://themerchlist.com/wp-content/uploads/2023/04/KAMEZ-Santhome-Deluxe-Notebook-with.png"
+    "description": "Cuaderno ejecutivo con tapa dura, papel premium y marcador incluido.",
+    "img": "https://images.unsplash.com/photo-1531346878377-a5be20888e57?w=400&h=400&fit=crop"
   },
   {
     "id": 6,
-    "name": "Botella Térmica",
+    "name": "Botella Térmica Pro",
     "price": 1800,
     "stock": 10,
     "category": "Accesorios",
-    "description": "Botella térmica de acero inoxidable, mantiene temperatura 12hs.",
-    "img": "https://electroshoptienda.com.uy/wp-content/uploads/2024/08/stanley-go-flip-16oz-lagoon.jpg"
+    "description": "Botella térmica de acero inoxidable 18/8, mantiene temperatura por 12hs.",
+    "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop"
+  },
+  {
+    "id": 7,
+    "name": "Hoodie Premium Unisex",
+    "price": 2200,
+    "stock": 8,
+    "category": "Indumentaria",
+    "description": "Sudadera con capucha, algodón premium, diseño minimalista y cómodo.",
+    "img": "https://images.unsplash.com/photo-1556821840-3a9ca85515da?w=400&h=400&fit=crop"
+  },
+  {
+    "id": 8,
+    "name": "Mouse Gaming Pro",
+    "price": 1900,
+    "stock": 12,
+    "category": "Electrónicos",
+    "description": "Mouse gaming con sensor óptico 16000 DPI, RGB personalizable.",
+    "img": "https://images.unsplash.com/photo-1527814050087-3793815479db?w=400&h=400&fit=crop"
+  },
+  {
+    "id": 9,
+    "name": "Agenda 2024 Premium",
+    "price": 650,
+    "stock": 20,
+    "category": "Oficina",
+    "description": "Agenda anual con planificador mensual, tapa de cuero sintético.",
+    "img": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=400&fit=crop"
+  },
+  {
+    "id": 10,
+    "name": "Reloj Inteligente Sport",
+    "price": 3500,
+    "stock": 5,
+    "category": "Electrónicos",
+    "description": "Smartwatch deportivo con GPS, monitor cardíaco y 7 días de batería.",
+    "img": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=400&fit=crop"
+  },
+  {
+    "id": 11,
+    "name": "Mochila Ejecutiva",
+    "price": 1500,
+    "stock": 15,
+    "category": "Accesorios",
+    "description": "Mochila para laptop hasta 15.6\", múltiples compartimientos y USB.",
+    "img": "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=400&h=400&fit=crop"
+  },
+  {
+    "id": 12,
+    "name": "Jeans Premium Fit",
+    "price": 2800,
+    "stock": 10,
+    "category": "Indumentaria",
+    "description": "Jeans de corte moderno, denim premium stretch, disponible en múltiples tallas.",
+    "img": "https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=400&fit=crop"
   }
 ]
